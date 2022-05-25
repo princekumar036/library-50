@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+    <section class="w-4/5 mx-auto grid gap-5 p-10">
+        
+        <a href="/upload">
+        <div class="card card-upload w-9/12 h-20 shadow-sm border-2 flex items-center justify-between py-1 px-3">
+            <div>
+                <p class="font-bold">Upload New</p>
+                <p class="text-xs"><span class="italic">Acceptable formats:</span> url, txt, docx, epub</p>
+            </div>
+            <div>
+                <img class="w-full" src="/static/icons/upload.svg" alt="Upload New">
+            </div>
+        </div>
+        </a>
+
+        {% for doc in index_data %}
+        <a href="/reader?doc_id={{ doc['doc_id'] }}">
+        <div class="card card-box h-20 w-9/12 shadow-sm border-2 flex items-center justify-between py-1 px-3">
+            <div class="w-9/12 truncate">
+                <h3 class="mb-1 ">{{ doc['title'] }}</h3>
+                <p class="text-xs">
+                    <span class="bg-red-100 pb-1 px-2 rounded-full">{{ doc.type }}</span>
+                    <!-- <span class="truncate">{{ doc['url'] }}</span> -->
+                </p>
+            </div>
+            <div>
+                {% if doc['top_image'] != '' %}
+                    <img class="h-16" src="{{ doc['top_image'] }}" alt="">
+                {% endif %}
+            </div>
+        </div>
+        </a>
+        {% endfor %}
+        
+    </section>
+
+{% endblock %}

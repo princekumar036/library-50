@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    width: 100%;
+    background-color: black;
+    color: #ddd;
+}
+
+header nav { position: relative; }
+header .nav-btn { position: absolute; top: 50%; }
+header .nav-back { left: 1rem; }
+header .nav-toc { right: 1rem; }
+
+.nav-image {
+    filter: invert(95%) sepia(0%) saturate(2587%) hue-rotate(79deg) brightness(121%) contrast(73%);
+}
+
+.reader-container img {
+    max-width: 100%; 
+}
+.reader-container {
+    padding: 2rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.reader-container a { text-decoration: none; }
+.reader-container a:visited { color: #0101e7; }
+.reader-container a:hover { text-decoration: underline; }
+
+.reader-container P {
+    text-align: left;
+}
+
+.inserted-toc.hidden {
+    display: none;
+}
+.inserted-toc {
+    position: fixed;
+    top: 2rem;
+    right: 0;
+    width: 200px;
+    max-height: 60vh;
+    overflow-y: auto;
+    background-color: white;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    box-shadow: 0 0 5px #222;
+    text-align: left;
+    font-size: 0.85rem;
+    padding: 1rem;
+    white-space: nowrap;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+}
+.inserted-toc ul {
+    padding-left: 1rem;
+}
+.inserted-toc li {
+    list-style: none;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    border-left: 1px solid #ddd;
+    padding-left: 5px;
+}

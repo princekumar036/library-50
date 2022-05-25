@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Library 50</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/reader.css') }}">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="nav-btn nav-back" href="/"><img class="nav-image" src="static/icons/back.svg" alt="Go Home"></a>
+            <a class="nav-btn nav-toc" href="#!"><img class="nav-image" src="static/icons/toc.svg" alt="Show TOC"></a>
+        </nav>
+    </header>
+    <main>
+        <div class="reader-container">
+            {% if url != '' %}
+                <h2>{{ title }}</h2>
+                <p>Retrieved from <a href="{{ url }}">{{ url }}</a></p>
+                <img src="{{ top_image }}" alt="">
+            {% endif %}
+
+            {% include 'bookshelf/' + doc_id + '/document.txt' %}
+        </div>
+    </main>
+</body>
+<script src="static/reader.js"></script>
+</html>
