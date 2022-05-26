@@ -3,7 +3,7 @@ EbookLib==0.17.1
 epub_meta==0.0.7
 Flask==1.1.1
 lxml==4.8.0
-newspaper==0.1.0.7
+newspaper3k
 newspaper3k==0.2.8
 PyDocX==0.9.10
 requests==2.22.0
