@@ -1,0 +1,6 @@
+textract
+pydocx
+newspaper
+ebooklib
+BeautifulSoup
+epub_meta

@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, request, flash
-from werkzeug.utils import secure_filename
 import json
 import requests
 import os
@@ -88,12 +87,15 @@ def processing():
 
 @app.route('/reader') 
 def reader():
+    
+    # Get document's metadata
     doc_id = request.args.get('doc_id')
     index_data = json.load(open('templates/bookshelf/index.json'))['index']
     doc_reqstd = ''
     for doc in index_data:
         if doc['doc_id'] == doc_id:
             doc_reqstd = doc
+    
     return render_template('reader.html', doc_id=doc_id, title=doc_reqstd['title'], top_image=doc_reqstd['top_image'], url=doc_reqstd['url'])
 
 @app.route('/error')
