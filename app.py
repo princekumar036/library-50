@@ -13,6 +13,9 @@ app.secret_key = "open access library"
 app.config['UPLOAD_FOLDER'] = '.'
 ALLOWED_EXT = {'.txt', '.docx', '.epub'}
 
+port = int(os.environ.ge('PORT', 5000))
+app.run(host='0.0.0.0', port=port, debug=True)
+
 @app.route('/')
 def index():
     index_data = json.load(open('templates/bookshelf/index.json'))['index']
